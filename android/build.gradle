@@ -1,12 +1,14 @@
 apply plugin: "com.android.library"
 
-ext {
-    rnsmDefaultTargetSdkVersion = 31
-    rnsmDefaultCompileSdkVersion = 31
-    rnsmDefaultMinSdkVersion = 21
-}
-ext.safeExtGet = {prop, fallback ->
-    rootProject.ext.has(prop) ? rootProject.ext.get(prop) : fallback
+buildscript {
+    ext {
+        rnsmDefaultTargetSdkVersion = 31
+        rnsmDefaultCompileSdkVersion = 31
+        rnsmDefaultMinSdkVersion = 21
+    }
+    ext.safeExtGet = {prop, fallback ->
+        rootProject.ext.has(prop) ? rootProject.ext.get(prop) : fallback
+    }
 }
 
 android {
